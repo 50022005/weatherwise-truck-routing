@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "django",
-  "buildCommand": "npm ci && npm run build",
+  "buildCommand": "npm ci && npm run build && python backend/manage.py collectstatic --noinput",
   "functions": {"wsgi.py": {"maxDuration": 300}}
 }

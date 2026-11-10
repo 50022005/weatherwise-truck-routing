@@ -5,6 +5,7 @@ import TripMap from './Map';
 import {plan,demoPlan,geocode} from './api';
 import {LABELS,COLORS,MILE} from './engine';
 import './style.css';
+import './theme.css';
 const CHICAGO={name:'Chicago, Illinois, United States',coord:[-87.6298,41.8781]},NASHVILLE={name:'Nashville, Tennessee, United States',coord:[-86.7816,36.1627]};
 function localDate(){const d=new Date(Date.now()+3600000);return new Date(d-d.getTimezoneOffset()*60000).toISOString().slice(0,16);}
 const duration=s=>`${Math.floor(s/3600)}h ${Math.round(s%3600/60)}m`;

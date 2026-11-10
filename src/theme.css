@@ -1,0 +1,136 @@
+/* Spotter-inspired navy and turquoise, with WeatherWise's own identity.
+   Weather hazard colors remain semantic and independent of the brand palette. */
+:root {
+  --navy: #10304f;
+  --navy-deep: #0a2238;
+  --turquoise: #40e0d0;
+  --teal: #087f83;
+  --ink: #17324d;
+  --muted: #607489;
+  --line: #dce5ec;
+  --tint: #eefaf9;
+  color: var(--ink);
+  background: #f2f6f9;
+}
+
+.app { position: relative; isolation: isolate; padding-bottom: 1px; }
+.app::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 286px;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, #ffffff04 1px, transparent 1px),
+    linear-gradient(#ffffff04 1px, transparent 1px),
+    radial-gradient(ellipse at 85% 15%, #17636a55, transparent 60%),
+    linear-gradient(110deg, var(--navy-deep), var(--navy));
+  background-size: 54px 54px, 54px 54px, auto, auto;
+}
+header { background: #10304fc9; border-color: #ffffff18; height: 76px; }
+.brand { color: #fff; font-family: 'DM Sans', sans-serif; letter-spacing: -.8px; }
+.brand > span:not(.brand-icon):not(.brand-divider) { color: var(--turquoise); }
+.brand-icon { background: var(--turquoise); color: var(--navy-deep); border-radius: 10px; }
+.brand-divider { background: #ffffff26; }
+.brand small { color: #c2d5e3; letter-spacing: 1.5px; }
+.header-right { color: #c2d5e3; }
+.header-right .icon-btn { color: #d4e4ee; }
+.avatar { color: var(--turquoise); background: #40e0d014; border: 1px solid #40e0d03d; }
+.status-dot { background: var(--turquoise); box-shadow: 0 0 0 4px #40e0d012; }
+.page-title { margin-top: 30px; margin-bottom: 29px; }
+.page-title .eyebrow { color: #7fe4db; letter-spacing: 1.9px; }
+.page-title h1 { color: #fff; font: 700 34px/1.2 'DM Sans', sans-serif; letter-spacing: -1.1px; margin: 10px 0; }
+.page-title h1 > span { color: var(--turquoise); }
+.page-title p { color: #bed0df; font-size: 12px; }
+.page-note { color: #d6e7ee; gap: 12px; }
+.page-note > svg { color: var(--turquoise); width: 24px; height: 24px; }
+.page-note b { color: #a7bfce; }
+
+.sidebar, .map-panel { border-color: var(--line); box-shadow: 0 8px 28px #0b28400a; border-radius: 12px; }
+h2, .route-metrics strong, .forecast h3, .modal h2 { font-family: 'DM Sans', sans-serif; }
+.trip-form, .tabs, .map-top, .forecast, .trip-summary { border-color: var(--line); }
+.section-heading h2 svg { color: var(--teal); }
+.step { color: var(--teal); background: var(--tint); padding: 4px 7px; border-radius: 4px; }
+label, .field-label { color: #526b80; font-size: 10px; }
+.field-label span { color: var(--muted); }
+.place-field, .input-shell, select { background: #f8fafc; border-color: var(--line); }
+.place-field input, .input-shell input, select { color: var(--ink); font-size: 12px; }
+.place-field:focus-within, .input-shell:focus-within { border-color: var(--teal); box-shadow: 0 0 0 3px #40e0d01c; }
+.place-dot { color: var(--teal); border-color: var(--teal); }
+.place-dot.filled { background: var(--teal); }
+.input-shell svg, .input-shell > span { color: #6c8194; }
+.swap { border-color: var(--line); color: var(--teal); }
+.suggestions { border-color: var(--line); }
+.suggestions button { color: var(--ink); }
+.suggestions button:hover { background: var(--tint); }
+.primary { background: var(--turquoise); color: var(--navy-deep); font-size: 12px; font-weight: 700; height: 45px; transition: background .15s, box-shadow .15s; }
+.primary:hover { background: #59ebdc; box-shadow: 0 3px 12px #0f9b9c22; }
+.form-foot { color: #61788a; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #159f9d; outline-offset: 3px; }
+.result-title > span, .route-name, .route-metrics, .card-bottom { color: var(--muted); }
+.tabs button { color: var(--muted); }
+.tabs button.active { color: var(--teal); border-color: var(--teal); }
+.tabs span { background: #edf2f6; color: #526b80; }
+.route-card { border-color: var(--line); transition: border-color .15s, background .15s; }
+.route-card:hover { border-color: #7fbfbd; }
+.route-card.selected { background: var(--tint); border-color: #159f9d; box-shadow: inset 3px 0 0 #159f9d; }
+.route-id { background: #edf2f6; color: #5d7386; }
+.selected .route-id { background: #d4f3ee; color: #08696d; }
+.recommended { background: #d2f3ed; color: #08656a; }
+.route-metrics strong { color: var(--ink); }
+.recommendation { background: var(--tint); color: #08696d; border: 1px solid #d1eeeb; }
+.recommendation p { color: #547983; }
+.recommendation.warning { background: #fff7ed; color: #9a521a; border-color: #f2ddc6; }
+.recommendation.warning p { color: #856851; }
+.checkpoint-row { color: var(--ink); border-color: var(--line); }
+.checkpoint-row small { color: var(--muted); }
+.checkpoint-row:hover, .checkpoint-row.chosen { background: var(--tint); }
+
+.map-top { background: #fafdff; }
+.map-top b { font-weight: 650; }
+.map-top-detail { color: var(--muted); border-color: var(--line); }
+.live-dot { background: #139b94; }
+.data-badge { color: #096e72; background: #e2f6f3; font-weight: 700; }
+.data-badge.demo { background: #fff3dc; color: #87611b; }
+.map-controls button { border-color: var(--line); color: var(--ink); }
+.map-controls button.enabled svg { color: var(--teal); }
+.map-controls button > span { color: #096e72; background: #dff5f0; }
+.map-route-label, .point-popup { border-color: var(--line); }
+.map-route-label small, .map-legend b, .map-legend span { color: #536d80; }
+.map-route-label svg { color: var(--teal); }
+.route-indicator { background: var(--teal); }
+.forecast-icon { background: #e5f7f4; color: var(--teal); }
+.forecast p, .forecast-time > span, .forecast-note { color: var(--muted); }
+.forecast-time { color: var(--teal); }
+.forecast-slider { background: linear-gradient(to right, #139b94 var(--progress), #e3edf1 var(--progress)); }
+.forecast-slider::-webkit-slider-thumb { background: var(--teal); box-shadow: 0 0 0 1px var(--teal); }
+.forecast-slider::-moz-range-thumb { width: 9px; height: 9px; border: 3px solid white; background: var(--teal); box-shadow: 0 0 0 1px var(--teal); border-radius: 50%; }
+.slider-labels button { color: #61788a; }
+.slider-labels button:hover { color: var(--teal); }
+.trip-summary { background: #f6f9fc; }
+.trip-summary > div { border-color: var(--line); }
+.trip-summary svg, .trip-summary span, .trip-summary small { color: #60788c; }
+.trip-summary b { color: var(--ink); }
+.point-popup .eyebrow, .point-popup p, .weather-values { color: var(--muted); }
+.point-popup .eyebrow { color: var(--teal); }
+footer { color: #5f7487; }
+footer button, .source-links a { color: #08767d; }
+.modal-backdrop { background: #071c31a6; }
+.modal h2 { color: var(--ink); }
+.modal .eyebrow { color: var(--teal); }
+.modal p { color: #536b7e; }
+.modal th { background: #edf6f8; }
+.modal td, .modal th { border-color: var(--line); }
+
+@media (max-width: 800px) {
+  header { height: 65px; }
+  .app::before { height: 280px; }
+  .page-title { margin-top: 26px; margin-bottom: 28px; }
+  .page-title h1 { font-size: 28px; }
+}
+@media (max-width: 560px) {
+  .app::before { height: 270px; }
+  .page-title h1 { font-size: 26px; }
+  .page-title .eyebrow { font-size: 8px; letter-spacing: 1.25px; }
+  .page-title p { font-size: 11px; line-height: 1.6; max-width: 290px; }
+}

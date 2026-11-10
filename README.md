@@ -113,11 +113,11 @@ npm run build
 
 33 JavaScript tests (including 300 cross-language risk cases) and 13 Django tests cover all condition thresholds, strict load boundaries, invalid weather, road/ETA interpolation, rain/snow conversion, forecast horizon, distance weighting, blocked routes and lexicographic ranking. Django tests additionally cover HTTP method guards and input validation. Provider calls are mocked in unit tests; live browser planning is tested separately and depends on public services.
 
-## Repository and walkthrough handoff
+## Repository 
 
 The repository includes GitHub Actions checks for JavaScript and Django tests and the production build. Dependencies, runtime data, local deployment metadata and secrets are excluded by `.gitignore`.
 
-`WALKTHROUGH.md` supplies a 7-minute recording outline, demo steps and talking points. An actual Loom recording still requires recording/uploading through your Loom account; no Loom link is fabricated.
+
 
 ## Sources / attribution
 

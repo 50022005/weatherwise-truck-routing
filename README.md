@@ -1,5 +1,10 @@
 # WeatherWise — Weather-Aware Truck Routing
 
+- Hosted application: https://weatherwise-truck-routing.vercel.app
+- GitHub repository (private): https://github.com/50022005/weatherwise-truck-routing
+- Backend health: https://weatherwise-truck-routing.vercel.app/api/health/
+- Review results and limitations: [VERIFICATION.md](VERIFICATION.md)
+
 React 19 + Leaflet frontend, Django 5.2 API, OSRM routing, Open-Meteo geocoding and hourly weather. No API keys are needed for the educational public endpoints. Provider terms, quotas, reliability, and commercial use must be reviewed before a production rollout.
 
 ## Run the full React + Django application
@@ -61,7 +66,7 @@ The initial Chicago–Nashville scenario is explicitly simulated, including its 
 
 ## Correctness decisions
 
-- OSRM is asked for up to 3 alternatives. If fewer than three routes are returned, two bounded, road-snapped midpoint detour requests are attempted. Routes with the same sampled geometry  are deduplicated, and excessively long detours are rejected. The UI reports fewer than three options when necessary; alternatives are never fabricated.
+- OSRM is asked for up to 3 alternatives. If fewer than three routes are returned, two bounded, road-snapped midpoint detour requests are attempted. Routes with the same sampled geometry are deduplicated, and excessively long detours are rejected. The UI reports fewer than three options when necessary; alternatives are never fabricated.
 - This uses a **driving profile, not a certified truck profile**. It does not account for height, width, axle loads, bridge restrictions, hazmat, closures, live traffic or mandatory rest. Weight affects weather risk only. Forecast guidance is not a guarantee of safe passage.
 - Checkpoints follow cumulative road distance. Segment-level OSRM durations determine ETAs, including both endpoints and the final shorter segment. If annotations do not align with geometry, cumulative geometry distance and proportional route duration are used. Road altitude and driver rest time are excluded.
 - Risk uses the maximum of wind, rain, snow and load overrides. Wind bands are continuous: 25–<35, 35–<45, 45–<55, ≥55 mph. The brief overlaps rain/snow endpoints; exact shared boundaries belong to the lower band, except the Low upper thresholds (0.10 rain / 0.5 snow) belong to Moderate. This assumption is visible in the UI.

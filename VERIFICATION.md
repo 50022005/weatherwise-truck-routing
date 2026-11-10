@@ -26,6 +26,7 @@ The core assignment behavior is implemented and the React + Django application i
 - Returned JSON HTTP 413 for oversized trip requests and rejected blank place names.
 - Fixed Windows compatibility of the cross-language engine test.
 - Updated deployment documentation and excluded local metadata and secrets from Git.
+- Removed full multi-day checkpoint forecast copies and unused routing annotations from API responses to reduce transfer size; corridor forecasts remain available for the slider.
 
 ## Limits relevant to evaluation
 

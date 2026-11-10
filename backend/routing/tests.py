@@ -59,3 +59,5 @@ class ProviderTests(SimpleTestCase):
         result=build_plan({'origin':{'coord':[0,0]},'destination':{'coord':[.1,0]},'departure':'2026-11-10T00:00:00Z','load':0,'spacing':25})
         self.assertEqual(len(result['routes']),3)
         self.assertEqual(routes_for.call_count,3)
+        self.assertNotIn('forecast',result['routes'][0]['checkpoints'][0])
+        self.assertNotIn('legs',result['routes'][0])

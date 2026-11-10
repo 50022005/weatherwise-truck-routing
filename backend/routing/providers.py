@@ -60,8 +60,10 @@ def build_plan(data):
     weather=dict(zip(unique,forecasts(list(unique.values()))))
     final=[]
     for r in routes:
-        points=[dict(p,forecast=weather[key(p['coord'])],weather=at_time(weather[key(p['coord'])],p['eta'])) for p in r['checkpoints']]
-        final.append(summarize(r,points,data['load']))
+        # Return ETA weather only. Full checkpoint forecasts and OSRM annotations
+        # are computation inputs, not UI data; duplicating them can exceed host limits.
+        points=[dict(p,weather=at_time(weather[key(p['coord'])],p['eta'])) for p in r['checkpoints']]
+        final.append(summarize({k:v for k,v in r.items() if k!='legs'},points,data['load']))
     corridor=[]
     for r in routes:
         stride=max(1,math.ceil(len(r['checkpoints'])/4))

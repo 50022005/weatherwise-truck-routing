@@ -22,4 +22,6 @@ TIME_ZONE='UTC'
 DATA_UPLOAD_MAX_MEMORY_SIZE=16384
 CACHES={'default':{'BACKEND':'django.core.cache.backends.locmem.LocMemCache','LOCATION':'weatherwise','TIMEOUT':600,'OPTIONS':{'MAX_ENTRIES':500}}}
 SECURE_CONTENT_TYPE_NOSNIFF=True
+# OSM requires a Referer on browser tile requests; Django defaults to same-origin.
+SECURE_REFERRER_POLICY='strict-origin-when-cross-origin'
 SECURE_PROXY_SSL_HEADER=('HTTP_X_FORWARDED_PROTO','https')
